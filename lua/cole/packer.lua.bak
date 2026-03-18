@@ -13,26 +13,22 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    -- use({
-    --     "catppuccin/nvim",
-    --     as = "catppuccin",
-    --     colorscheme = "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha",
-    --     config = function()
-    --  	       vim.cmd.colorscheme "catppuccin-mocha"
-    --         require("catppuccin").setup {
-    --            color_overrides = {
-    --                 all = {
-    --                    strings = "#ffffff",
-    --                 },
-    --             }
-    --         }
-    --     end
-    -- }):
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin",
+        colorscheme = "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha",
+        config = function()
+            require("catppuccin").setup()
+        end
+    })
+    use { "diegoulloao/neofusion.nvim" }
     use { "rose-pine/neovim", as = "rose-pine" }
     use { 'shaunsingh/nord.nvim', as = "nord", }
     use { 'yashguptaz/calvera-dark.nvim' }
     use { "EdenEast/nightfox.nvim" }
     use("oxfist/night-owl.nvim")
+    use("/oahlen/iceberg.nvim")
+    use { "yashguptaz/calvera-dark.nvim" }
 
     use({
         'windwp/nvim-ts-autotag',
@@ -109,5 +105,9 @@ return require('packer').startup(function(use)
         end,
     })
     use { "akinsho/toggleterm.nvim" }
-    use { 'numToStr/Comment.nvim' }
+    use { "numToStr/Comment.nvim" }
+    use { "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("ibl").setup()
+        end }
 end)

@@ -1,2 +1,3 @@
-require("cole.remap");
-require("cole.set");
+require("cole.plugins")
+require("cole.remap")
+require("cole.set")
