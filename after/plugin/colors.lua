@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color --[[ or "night-owl" or "catppuccin" ]] or "calvera"
+    color = color --[[ or "night-owl" or "catppuccin" or "calvera" ]] or "nord"
     vim.cmd.colorscheme(color)
 
     vim.cmd('hi! LineNr guibg=none ctermbg=none')
